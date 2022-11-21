@@ -1,0 +1,16 @@
+﻿@page
+@model AppWithDatabase.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <div>
+        <h1 class="mt-4 display-4">Joe's Pizza</h1>
+        <h4 class="mb-4"><em>Hand Delivered by Spider-Man Himself!</em></h4>
+        <img class="img-fluid rounded shadow-lg" src="~/img/pizza-time-welcome.jpg" alt="Pizza time" />
+    </div>
+    <div>
+        <a class="btn btn-primary mb-4 mt-4" asp-area="" asp-page="/Pizza">Get Started</a>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+@page
+@model AppWithDatabase.Pages.PizzaModel
+
+<div class="text-center">
+    <h1 class="display-4 mt-4 mb-4">Pick Your Pizza</h1>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-6 pr-4">
+                <img class="img-fluid" style="width: 75%;" src="~/img/pizzas/create.png" alt="Create your pizza" />
+            </div>
+            <div class="col-6 p-5">
+                <h2 style="font-size: 2.75rem;">Create Your Own Pizza!</h2>
+                <p style="font-size: 1.25rem;">Use the Pizza Creator to make a custom pizza 😋</p>
+                <a class="btn btn-primary" asp-area="" asp-page="Forms/CustomPizza">Create</a>
+            </div>
+
+            @foreach (var pizza in Model.fakePizzaDatabase)
+            {
+                var imagePath = $"~/img/pizzas/{pizza.ImageTitle}.png";
+
+                <div class="col-4 mt-4 mb-4">
+                    <a 
+                        class="pizza-img"
+                        asp-area=""
+                        asp-page="Checkout/Checkout" 
+                        asp-route-PizzaName="@pizza.PizzaName" 
+                        asp-route-ImageTitle="@pizza.ImageTitle" 
+                        asp-route-PizzaPrice="@pizza.FinalPrice">
+                        <img src="@imagePath" class="w-100" asp-append-version="true" />
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

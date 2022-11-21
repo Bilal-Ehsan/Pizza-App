@@ -1,0 +1,64 @@
+@page
+@model AppWithDatabase.Pages.Forms.CustomPizzaModel
+
+<h1 class="display-4 mt-4 mb-4 text-center">Create Your Pizza!</h1>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Pizza Creator</h5>
+            </div>
+
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-3">
+                        <label>Name Your Pizza 😄</label>
+                        <input type="text" asp-for="Pizza.PizzaName" class="form-control" maxlength="30" required />
+                    </div>
+
+                    <p>Select desired add-ons:</p>
+
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="checkbox" type="checkbox" asp-for="Pizza.TomatoSauce" checked disabled>
+                            <label class="form-check-label">Tomato Sauce</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="checkbox" type="checkbox" asp-for="Pizza.Cheese" checked disabled>
+                            <label class="form-check-label">Cheese</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="checkbox" type="checkbox" asp-for="Pizza.Pepperoni">
+                            <label class="form-check-label">Pepperoni</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="checkbox" type="checkbox" asp-for="Pizza.Ham">
+                            <label class="form-check-label">Ham</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="checkbox" type="checkbox" asp-for="Pizza.Mushroom">
+                            <label class="form-check-label">Mushroom</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="checkbox" type="checkbox" asp-for="Pizza.Tuna">
+                            <label class="form-check-label">Tuna</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="checkbox" type="checkbox" asp-for="Pizza.Beef">
+                            <label class="form-check-label">Beef</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="checkbox" type="checkbox" asp-for="Pizza.Pineapple">
+                            <label>Pineapple</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
